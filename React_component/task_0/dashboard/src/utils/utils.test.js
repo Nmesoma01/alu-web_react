@@ -1,7 +1,9 @@
 import { getFullYear, getFooterCopy, getLatestNotification } from "./utils";
 
 test("returns current year", () => {
-  expect(getFullYear()).toBe(2022);
+  // Get the current year dynamically
+  const currentYear = new Date().getFullYear();
+  expect(getFullYear()).toBe(currentYear);
 });
 
 test("correct footer copy", () => {
