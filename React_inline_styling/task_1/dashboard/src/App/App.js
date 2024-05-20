@@ -36,7 +36,6 @@ class App extends React.Component {
       this.props.logOut();
     }
   }
-
   componentDidMount() {
     document.addEventListener("keydown", this.handleKeyPress);
   }
@@ -49,20 +48,26 @@ class App extends React.Component {
     return (
       <React.Fragment>
         <div className={css(styles.App)}>
-          {/* Header */}
-          <Header />
-
-          {/* Main Content */}
-          <div className="main-content">
-            {/* Body Section */}
-            <div className="body-section">
-              {/* Placeholder content for body */}
-              <p>This is the body content.</p>
-            </div>
-
-            {/* Footer Section */}
-            <Footer />
+          <div className="heading-section">
+            <Notifications listNotifications={this.listNotifications} />
+            <Header />
           </div>
+          {this.props.isLoggedIn ? (
+            <BodySectionWithMarginBottom title="Course list">
+              <CourseList listCourses={this.listCourses} />
+            </BodySectionWithMarginBottom>
+          ) : (
+            <BodySectionWithMarginBottom title="Log in to continue">
+              <Login />
+            </BodySectionWithMarginBottom>
+          )}
+          <BodySection title="News from the school">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis at tempora odio, necessitatibus repudiandae reiciendis cum nemo sed asperiores ut molestiae eaque aliquam illo ipsa
+              iste vero dolor voluptates.
+            </p>
+          </BodySection>
+          <Footer />
         </div>
       </React.Fragment>
     );
