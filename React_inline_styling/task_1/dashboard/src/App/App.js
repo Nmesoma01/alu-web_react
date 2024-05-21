@@ -36,6 +36,7 @@ class App extends React.Component {
       this.props.logOut();
     }
   }
+
   componentDidMount() {
     document.addEventListener("keydown", this.handleKeyPress);
   }
@@ -82,7 +83,6 @@ const styles = StyleSheet.create({
     fontFamily: "Arial, Helvetica, sans-serif",
     backgroundColor: "#f8f9fa", // Example background color for body
   },
-  // Define styles for Footer here
   footer: {
     position: "absolute",
     bottom: 0,
