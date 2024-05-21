@@ -36,6 +36,7 @@ class App extends React.Component {
       this.props.logOut();
     }
   }
+
   componentDidMount() {
     document.addEventListener("keydown", this.handleKeyPress);
   }
@@ -67,7 +68,7 @@ class App extends React.Component {
               iste vero dolor voluptates.
             </p>
           </BodySection>
-          <Footer />
+          <Footer className={css(styles.footer)} />
         </div>
       </React.Fragment>
     );
@@ -80,6 +81,17 @@ const styles = StyleSheet.create({
     maxWidth: "100vw",
     position: "relative",
     fontFamily: "Arial, Helvetica, sans-serif",
+    backgroundColor: "#f8f9fa", // Example background color for body
+  },
+  footer: {
+    position: "absolute",
+    bottom: 0,
+    left: 0,
+    width: "100%",
+    backgroundColor: "#343a40", // Example background color for footer
+    color: "#fff", // Example text color for footer
+    textAlign: "center",
+    padding: "10px 0",
   },
 });
 
